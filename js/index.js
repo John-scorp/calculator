@@ -222,7 +222,20 @@ let hisDisplay = document.getElementById("history");
         firstNumber = 0;
        
                 
-        if (clicked > 0)
+        if(clicked == 0)
+        {
+            calDisplay.innerText = firstNumber;
+            if(equal == true)
+            {
+            
+                hisDisplay.innerText += " " + result + " ; ";
+                equal = false;
+            }
+        
+        }
+        clicked +=1;
+        
+        if (clicked > 1)
         {
             calDisplay.innerText += firstNumber;
         }
