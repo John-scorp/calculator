@@ -7,12 +7,13 @@ let firstDenom = 0;
 let seconfDenom = 0;
 let equal = false;
 let result = 0;
-console.log(result);
+console.log(1000 * 10/100);
 let plusSign =false;
 let minusSign = false;
 let mulSign = false;
 let divSign = false;
 let percentSign = false;
+let thirdNumber = 0;
 calDisplay = document.getElementById("display-cal");
 let hisDisplay = document.getElementById("history");
 
@@ -302,15 +303,26 @@ function btnClear() {
     
 }
 function btnPercent() {
-    calDisplay.innerText = "";
+     if (clicked == 0)
+    {
+        btnClear();
+    }
+    else{
+        thirdNumber = Number(calDisplay.innerText);
+        percentSign = true;
+        hisDisplay.innerText += thirdNumber + " % ";
+        calDisplay.innerText = " % ";
+        clicked = 0;
+    }
     
 }
 
 function btnEqual() {
-    seconfDenom = Number(calDisplay.innerText);
+    seconfDenom =  Number(calDisplay.innerText);
+    
 
    
-    if(plusSign == true)
+    if(plusSign == true  && percentSign == false)
     {
         hisDisplay.innerText += " " + seconfDenom + " = ";
         result = firstDenom + seconfDenom;
@@ -319,7 +331,7 @@ function btnEqual() {
         equal = true;
         plusSign= false;
     }
-    if(minusSign == true)
+    if(minusSign == true && percentSign == false)
     {
         hisDisplay.innerText += " " + seconfDenom + " = ";
         result = firstDenom - seconfDenom;
@@ -328,16 +340,16 @@ function btnEqual() {
         equal = true;
         minusSign = false;
     }
-    if(mulSign == true)
+    if(mulSign == true && percentSign == false)
     {
         hisDisplay.innerText += " " + seconfDenom + " = ";
         result = firstDenom * seconfDenom;
         calDisplay.innerText = result;
         clicked = 0;
         equal = true;
-        minusSign = false;
+        mulSign = false;
     }
-    if(divSign == true)
+    if(divSign == true && percentSign == false)
     {
         hisDisplay.innerText += " " + seconfDenom + " = ";
         result = firstDenom / seconfDenom;
@@ -346,7 +358,17 @@ function btnEqual() {
         equal = true;
         divSign = false;
     }
-
+    if(percentSign == true)
+    {
+        hisDisplay.innerText += " = ";
+        result = firstDenom * (thirdNumber/100);
+        calDisplay.innerText = result;
+        console.log(result)
+        clicked = 0;
+        equal = true;
+        percentSign = false;
+        mulSign = false;
+    }
 
     
 }
