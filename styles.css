@@ -1,0 +1,44 @@
+.outter {
+    width: 400px;
+    height:auto;
+    border: 4px solid red ;
+    text-align:center;
+    margin: 20px auto;
+    background-color: bisque;
+}
+.heading{
+    border:none;
+    margin: 5px 5px;
+    background-color: grey;
+    color:rgb(4, 24, 43);
+    
+}
+
+.result{
+    font-weight: 700;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid goldenrod;
+    text-align: end;
+    padding-right: 20px;
+    background-color: aqua;
+    font-size: larger;
+    margin: 5px 5px;
+    height: 55px;
+}
+.buttons button{
+    width: 120px;
+    height: 40px;
+    font-size: larger;
+    background-color: rgb(243, 167, 74);
+    margin: 5px 5px;
+    color:brown;
+    font-weight: 600;
+}
+.pHistory{
+    width: 390px;
+    height:30px;
+    background-color: rgb(123, 124, 192);
+    margin: 5px 5px;
+    border: none;
+    text-align: end;
+}
